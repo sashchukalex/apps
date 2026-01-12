@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Apps</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #ff6b35;
+        margin-bottom: 10px;
+      }
+
+      .tagline {
+        font-size: 18px;
+        color: #666;
+      }
+
+      .apps-section {
+        margin-bottom: 80px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #222;
+      }
+
+      .app-card {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 30px;
+        background: #fff;
+        border: 2px solid #f0f0f0;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .app-card:hover {
+        border-color: #ff6b35;
+        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        flex-shrink: 0;
+      }
+
+      .app-info {
+        flex-grow: 1;
+      }
+
+      .app-name {
+        font-size: 24px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 8px;
+      }
+
+      .app-description {
+        font-size: 16px;
+        color: #666;
+      }
+
+      .app-link {
+        padding: 12px 28px;
+        background-color: #ff6b35;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+      }
+
+      .app-link:hover {
+        background-color: #e85a2a;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 2px solid #f0f0f0;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: #ff6b35;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #e85a2a;
+        text-decoration: underline;
+      }
+
+      .copyright {
+        color: #999;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .app-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Alex Apps</h1>
+        <p class="tagline">Quality apps for your everyday needs</p>
+      </header>
+
+      <section class="apps-section">
+        <h2 class="section-title">Our Apps</h2>
+
+        <div class="app-card">
+          <div class="app-icon">
+            <img
+              src="./ios-light.png"
+              alt="Restore Old Photos icon"
+              style="width: 100%; height: 100%; border-radius: 18px"
+            />
+          </div>
+          <div class="app-info">
+            <h3 class="app-name">Restore Old Photos: AI Revive</h3>
+            <p class="app-description">
+              Bring your precious memories back to life with AI-powered photo
+              restoration
+            </p>
+          </div>
+          <a
+            href="https://apps.apple.com/us/app/restore-old-photo/id6757200680"
+            class="app-link"
+            >View on App Store</a
+          >
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-links">
+          <a href="mailto:alex.sashchuk.apps@gmail.com">Contact Us</a>
+          <a
+            href="https://righteous-cast-59e.notion.site/Restore-Old-Photos-Privacy-Policy-2e2f79124b82801ea399d59bae1bb550"
+            target="_blank"
+            >Privacy Policy</a
+          >
+          <a
+            href="https://righteous-cast-59e.notion.site/Restore-Old-Photos-Terms-Of-Use-2e2f79124b82806bba78eadfae58b59c"
+            target="_blank"
+            >Terms of Service</a
+          >
+        </div>
+        <p class="copyright">© 2026 Alex Apps. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
