@@ -4,7 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex Apps</title>
+    <meta name="description" content="iOS apps by Alex Apps: Restore Old Photos and Bedtime Stories with Biscuit." />
     <style>
+      :root {
+        --bg: #faf8f5;
+        --card: #ffffff;
+        --text: #1d1d1f;
+        --muted: #6e6e73;
+        --line: #ece8e2;
+        --accent: #ff6b35;
+        --accent-hover: #e85a2a;
+        --shadow: 0 1px 2px rgba(29, 29, 31, 0.04), 0 8px 24px rgba(29, 29, 31, 0.06);
+        --shadow-hover: 0 2px 4px rgba(29, 29, 31, 0.05), 0 16px 40px rgba(29, 29, 31, 0.1);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111113;
+          --card: #1c1c1f;
+          --text: #f5f5f7;
+          --muted: #a1a1a6;
+          --line: #2c2c30;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+          --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -12,168 +37,174 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
-        background-color: #ffffff;
-        color: #333;
-        line-height: 1.6;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
       }
 
       .container {
-        max-width: 1000px;
+        max-width: 880px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 72px 20px 40px;
       }
 
       header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 56px;
       }
 
       h1 {
-        font-size: 48px;
-        font-weight: 700;
-        color: #ff6b35;
-        margin-bottom: 10px;
+        font-size: 44px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+        margin-bottom: 8px;
       }
 
       .tagline {
         font-size: 18px;
-        color: #666;
-      }
-
-      .apps-section {
-        margin-bottom: 80px;
+        color: var(--muted);
       }
 
       .section-title {
-        font-size: 32px;
+        font-size: 13px;
         font-weight: 600;
-        margin-bottom: 30px;
-        color: #222;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 4px 16px;
+      }
+
+      .apps {
+        display: grid;
+        gap: 16px;
       }
 
       .app-card {
-        display: flex;
+        display: grid;
+        grid-template-columns: 88px 1fr auto;
         align-items: center;
         gap: 24px;
-        padding: 30px;
-        background: #fff;
-        border: 2px solid #f0f0f0;
-        border-radius: 16px;
-        transition: all 0.3s ease;
-        margin-bottom: 20px;
+        padding: 24px 28px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        transition: box-shadow 0.25s ease, transform 0.25s ease;
       }
 
       .app-card:hover {
-        border-color: #ff6b35;
-        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+        box-shadow: var(--shadow-hover);
         transform: translateY(-2px);
       }
 
       .app-icon {
-        width: 80px;
-        height: 80px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 36px;
-        flex-shrink: 0;
+        width: 88px;
+        height: 88px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.08);
       }
 
-      .app-info {
-        flex-grow: 1;
+      .app-icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .app-name {
-        font-size: 24px;
-        font-weight: 600;
-        color: #222;
-        margin-bottom: 8px;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 4px;
       }
 
       .app-description {
-        font-size: 16px;
-        color: #666;
+        font-size: 15px;
+        color: var(--muted);
+        margin-bottom: 10px;
       }
 
-      .app-legal {
-        margin-top: 6px;
+      .app-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
         font-size: 14px;
-        color: #999;
       }
 
-      .app-legal a {
-        color: #ff6b35;
+      .app-links a {
+        color: var(--accent);
         text-decoration: none;
+        font-weight: 500;
       }
 
-      .app-legal a:hover {
+      .app-links a:hover {
+        color: var(--accent-hover);
         text-decoration: underline;
       }
 
       .app-link {
-        padding: 12px 28px;
-        background-color: #ff6b35;
-        color: white;
+        white-space: nowrap;
+        padding: 11px 22px;
+        background: var(--accent);
+        color: #fff;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: 999px;
+        font-size: 15px;
         font-weight: 600;
-        transition: background-color 0.3s ease;
-        display: inline-block;
+        transition: background-color 0.2s ease;
       }
 
       .app-link:hover {
-        background-color: #e85a2a;
+        background: var(--accent-hover);
       }
 
       footer {
+        margin-top: 72px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
         text-align: center;
-        padding: 40px 20px;
-        border-top: 2px solid #f0f0f0;
       }
 
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-      }
-
-      .footer-links a {
-        color: #ff6b35;
+      footer a {
+        color: var(--accent);
         text-decoration: none;
-        font-weight: 500;
-        font-size: 16px;
-        transition: color 0.3s ease;
+        font-weight: 600;
       }
 
-      .footer-links a:hover {
-        color: #e85a2a;
+      footer a:hover {
         text-decoration: underline;
       }
 
       .copyright {
-        color: #999;
-        font-size: 14px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 640px) {
+        .container {
+          padding-top: 48px;
+        }
+
         h1 {
           font-size: 36px;
         }
 
         .app-card {
-          flex-direction: column;
+          grid-template-columns: minmax(0, 1fr);
+          justify-items: center;
           text-align: center;
+          gap: 16px;
+          padding: 28px 20px;
         }
 
-        .footer-links {
-          flex-direction: column;
-          gap: 20px;
+        .app-links {
+          justify-content: center;
         }
       }
     </style>
@@ -185,81 +216,65 @@
         <p class="tagline">Quality apps for your everyday needs</p>
       </header>
 
-      <section class="apps-section">
+      <main>
         <h2 class="section-title">Our Apps</h2>
 
-        <div class="app-card">
-          <div class="app-icon">
-            <img
-              src="./ios-light.png"
-              alt="Restore Old Photos icon"
-              style="width: 100%; height: 100%; border-radius: 18px"
-            />
-          </div>
-          <div class="app-info">
-            <h3 class="app-name">Restore Old Photos: AI Revive</h3>
-            <p class="app-description">
-              Bring your precious memories back to life with AI-powered photo
-              restoration
-            </p>
-          </div>
-          <a
-            href="https://apps.apple.com/us/app/restore-old-photo/id6757200680"
-            class="app-link"
-            >View on App Store</a
-          >
-        </div>
+        <div class="apps">
+          <article class="app-card">
+            <div class="app-icon">
+              <img src="./ios-light.png" alt="Restore Old Photos icon" />
+            </div>
+            <div class="app-info">
+              <h3 class="app-name">Restore Old Photos: AI Revive</h3>
+              <p class="app-description">
+                Bring your precious memories back to life with AI-powered photo
+                restoration
+              </p>
+              <nav class="app-links">
+                <a href="https://retropicapp.com/" target="_blank">Website</a>
+                <a href="https://retropicapp.com/privacy" target="_blank">Privacy Policy</a>
+                <a href="https://retropicapp.com/terms" target="_blank">Terms of Use</a>
+              </nav>
+            </div>
+            <a
+              href="https://apps.apple.com/us/app/restore-old-photo/id6757200680"
+              class="app-link"
+              >View on App Store</a
+            >
+          </article>
 
-        <div class="app-card">
-          <div class="app-icon">
-            <img
-              src="./bedtime-stories-icon.png"
-              alt="Bedtime Stories with Biscuit icon"
-              style="width: 100%; height: 100%; border-radius: 18px"
-            />
-          </div>
-          <div class="app-info">
-            <h3 class="app-name">Bedtime Stories with Biscuit</h3>
-            <p class="app-description">
-              Calm illustrated bedtime stories to read together or listen to,
-              with gentle narration and soft music
-            </p>
-            <p class="app-legal">
-              <a
-                href="https://righteous-cast-59e.notion.site/Bedtime-Stories-Privacy-Policy-41af79124b82803396afe2cc121d34ba"
-                target="_blank"
-                >Privacy Policy</a
-              >
-              ·
-              <a
-                href="https://righteous-cast-59e.notion.site/Bedtime-Stories-Terms-of-Use-41af79124b8280a39febeb3fee6300a2"
-                target="_blank"
-                >Terms of Use</a
-              >
-            </p>
-          </div>
-          <a
-            href="https://apps.apple.com/us/app/id6834506248"
-            class="app-link"
-            >View on App Store</a
-          >
+          <article class="app-card">
+            <div class="app-icon">
+              <img src="./bedtime-stories-icon.png" alt="Bedtime Stories with Biscuit icon" />
+            </div>
+            <div class="app-info">
+              <h3 class="app-name">Bedtime Stories with Biscuit</h3>
+              <p class="app-description">
+                Calm illustrated bedtime stories to read together or listen to,
+                with gentle narration and soft music
+              </p>
+              <nav class="app-links">
+                <a
+                  href="https://righteous-cast-59e.notion.site/Bedtime-Stories-Privacy-Policy-41af79124b82803396afe2cc121d34ba"
+                  target="_blank"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="https://righteous-cast-59e.notion.site/Bedtime-Stories-Terms-of-Use-41af79124b8280a39febeb3fee6300a2"
+                  target="_blank"
+                  >Terms of Use</a
+                >
+              </nav>
+            </div>
+            <a href="https://apps.apple.com/us/app/id6834506248" class="app-link"
+              >View on App Store</a
+            >
+          </article>
         </div>
-      </section>
+      </main>
 
       <footer>
-        <div class="footer-links">
-          <a href="mailto:alex.sashchuk.apps@gmail.com">Contact Us</a>
-          <a
-            href="https://righteous-cast-59e.notion.site/Restore-Old-Photos-Privacy-Policy-2e2f79124b82801ea399d59bae1bb550"
-            target="_blank"
-            >Privacy Policy</a
-          >
-          <a
-            href="https://righteous-cast-59e.notion.site/Restore-Old-Photos-Terms-Of-Use-2e2f79124b82806bba78eadfae58b59c"
-            target="_blank"
-            >Terms of Service</a
-          >
-        </div>
+        <a href="mailto:alex.sashchuk.apps@gmail.com">Contact Us</a>
         <p class="copyright">© 2026 Alex Apps. All rights reserved.</p>
       </footer>
     </div>
